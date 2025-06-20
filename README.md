@@ -13,4 +13,20 @@ This is Onion Style site that shows how easy it is to spread missinformation on 
 
 ## How to contribute
 
+### Style guide
+
+* MLA
+* Onion Dry Satire
+* Lots of officially sounding patents and sources that obviously are fake
+* Link to real products that help to fuel the theories
+* Good quality Images
+
+### Rules
+
+* If it's not AI Slop, PR will be rejected
+* If it's real news, PR will be rejected
+* If it's too on the nose, PR will be rejected
+* If it's "ha-ha" funny", PR will be rejected (We run a profesional organization here damn it!!)
+
+### Submitting new Artcles
 Send a PR, if it's crazy enough and looks good enough I might merge it, or not... whatever... This is a 30 min vibe coding excercise

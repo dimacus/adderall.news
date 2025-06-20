@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Search, Menu, X, ChevronDown, Bell, User, TrendingUp, Clock, Calendar } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,12 +10,13 @@ export default function Home() {
   const featuredArticles = [
     {
       id: 1,
-      title: "Major Economic Shifts Signal New Global Financial Landscape",
-      excerpt: "Experts analyze unprecedented market movements and their implications for the global economy as traditional financial systems face mounting pressure.",
-      image: "https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=800",
-      category: "FINANCE",
-      timestamp: "2 hours ago",
-      isBreaking: true
+      title: "BREAKING: Federal Amphetamine Reserve Exposed as Strategic Neural Computing Initiative, Sources Confirm",
+      excerpt: "Exclusive investigation reveals government stockpiling stimulants for next-generation bio-AI infrastructure. Multiple sources confirm systematic accumulation of amphetamine compounds under drug enforcement guise.",
+      image: "https://images.pexels.com/photos/3825539/pexels-photo-3825539.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "INVESTIGATION",
+      timestamp: "30 minutes ago",
+      isBreaking: true,
+      link: "/article/federal-amphetamine-reserve"
     },
     {
       id: 2,
@@ -36,6 +38,11 @@ export default function Home() {
 
   const sidebarArticles = [
     {
+      title: "Bio-Computing Patents Reveal Government Technology Strategy",
+      timestamp: "45 minutes ago",
+      category: "TECHNOLOGY"
+    },
+    {
       title: "Energy Markets Experience Unprecedented Volatility",
       timestamp: "1 hour ago",
       category: "ENERGY"
@@ -49,11 +56,6 @@ export default function Home() {
       title: "Transportation Infrastructure Receives Significant Investment",
       timestamp: "5 hours ago",
       category: "INFRASTRUCTURE"
-    },
-    {
-      title: "Agricultural Innovations Address Food Security Concerns",
-      timestamp: "7 hours ago",
-      category: "AGRICULTURE"
     }
   ];
 
@@ -67,7 +69,7 @@ export default function Home() {
           <span className="bg-white text-red-600 px-3 py-1 text-sm font-bold mr-4">BREAKING</span>
           <div className="flex-1 overflow-hidden">
             <div className="animate-pulse">
-              <span className="text-sm">Major developments continue to unfold across multiple sectors as experts monitor evolving situations...</span>
+              <span className="text-sm">Federal Amphetamine Reserve exposed as strategic neural computing initiative - Government stockpiling stimulants for bio-AI infrastructure...</span>
             </div>
           </div>
         </div>
@@ -177,36 +179,38 @@ export default function Home() {
           <div className="lg:col-span-3">
             {/* Featured Article */}
             <div className="mb-8">
-              <div className="relative rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src={featuredArticles[0].image}
-                  alt={featuredArticles[0].title}
-                  className="w-full h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <div className="flex items-center mb-3">
-                    {featuredArticles[0].isBreaking && (
-                      <span className="bg-red-600 text-white px-3 py-1 text-xs font-bold mr-3">
-                        BREAKING
+              <Link href={featuredArticles[0].link} className="block">
+                <div className="relative rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
+                  <img
+                    src={featuredArticles[0].image}
+                    alt={featuredArticles[0].title}
+                    className="w-full h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <div className="flex items-center mb-3">
+                      {featuredArticles[0].isBreaking && (
+                        <span className="bg-red-600 text-white px-3 py-1 text-xs font-bold mr-3 animate-pulse">
+                          BREAKING
+                        </span>
+                      )}
+                      <span className="bg-blue-600 text-white px-3 py-1 text-xs font-bold mr-3">
+                        {featuredArticles[0].category}
                       </span>
-                    )}
-                    <span className="bg-blue-600 text-white px-3 py-1 text-xs font-bold mr-3">
-                      {featuredArticles[0].category}
-                    </span>
-                    <span className="text-sm text-gray-300 flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {featuredArticles[0].timestamp}
-                    </span>
+                      <span className="text-sm text-gray-300 flex items-center">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {featuredArticles[0].timestamp}
+                      </span>
+                    </div>
+                    <h2 className="text-3xl font-bold mb-3 leading-tight hover:text-red-300 transition-colors">
+                      {featuredArticles[0].title}
+                    </h2>
+                    <p className="text-lg text-gray-200 leading-relaxed max-w-3xl">
+                      {featuredArticles[0].excerpt}
+                    </p>
                   </div>
-                  <h2 className="text-3xl font-bold mb-3 leading-tight">
-                    {featuredArticles[0].title}
-                  </h2>
-                  <p className="text-lg text-gray-200 leading-relaxed max-w-3xl">
-                    {featuredArticles[0].excerpt}
-                  </p>
                 </div>
-              </div>
+              </Link>
             </div>
 
             {/* Secondary Articles */}
@@ -228,7 +232,7 @@ export default function Home() {
                         {article.timestamp}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
                       {article.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -246,7 +250,24 @@ export default function Home() {
                 <div className="flex-1 h-px bg-red-600"></div>
               </div>
               <div className="space-y-4">
-                {[1, 2, 3, 4, 5].map((i) => (
+                <article className="border-l-4 border-red-600 pl-6 py-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                  <div className="flex items-center mb-2">
+                    <span className="bg-red-600 text-white px-2 py-1 text-xs font-bold mr-3">
+                      INVESTIGATION
+                    </span>
+                    <span className="text-sm text-gray-500 flex items-center">
+                      <Clock className="w-4 h-4 mr-1" />
+                      1 hour ago
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    DEA Seizure Records Show Unusual Patterns in High-Purity Stimulant Confiscations
+                  </h3>
+                  <p className="text-gray-600">
+                    Analysis of federal drug enforcement data reveals unprecedented purity levels and storage protocols that deviate from standard evidence handling procedures.
+                  </p>
+                </article>
+                {[2, 3, 4, 5].map((i) => (
                   <article key={i} className="border-l-4 border-red-600 pl-6 py-4 bg-gray-50 hover:bg-gray-100 transition-colors">
                     <div className="flex items-center mb-2">
                       <span className="bg-gray-700 text-white px-2 py-1 text-xs font-bold mr-3">
@@ -254,7 +275,7 @@ export default function Home() {
                       </span>
                       <span className="text-sm text-gray-500 flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
-                        {i + 2} hours ago
+                        {i + 1} hours ago
                       </span>
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -283,7 +304,7 @@ export default function Home() {
                     <span className="text-xs font-bold text-blue-600 mb-1 block">
                       {article.category}
                     </span>
-                    <h4 className="font-semibold text-gray-900 mb-2 leading-tight">
+                    <h4 className="font-semibold text-gray-900 mb-2 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
                       {article.title}
                     </h4>
                     <span className="text-sm text-gray-500 flex items-center">

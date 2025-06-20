@@ -20,11 +20,12 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Technology Giants Face Regulatory Challenges Across Multiple Jurisdictions",
-      excerpt: "New legislation targeting big tech companies gains momentum as governments worldwide reassess digital privacy and market competition.",
+      title: "EXCLUSIVE: Robeaute IPO Blocked by Classified DARPA Patents, Sources Reveal Government's 'Mind Control Monopoly'",
+      excerpt: "Startup's $12.3B public offering halted after discovery of secret federal patents covering neural interface technologies. DARPA official confirms government strategy to prevent private sector cognitive control capabilities.",
       image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800",
       category: "TECHNOLOGY",
-      timestamp: "4 hours ago"
+      timestamp: "4 hours ago",
+      link: "/article/robeaute-darpa-patents"
     },
     {
       id: 3,
@@ -32,7 +33,8 @@ export default function Home() {
       excerpt: "Revolutionary treatment approaches demonstrate significant potential in addressing previously incurable medical conditions.",
       image: "https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=800",
       category: "HEALTH",
-      timestamp: "6 hours ago"
+      timestamp: "6 hours ago",
+      link: "#" // Add this line
     }
   ];
 
@@ -232,9 +234,11 @@ export default function Home() {
                         {article.timestamp}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
-                      {article.title}
-                    </h3>
+                    <Link href={article.link ?? "#"} className="block">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
+                        {article.title}
+                      </h3>
+                    </Link>
                     <p className="text-gray-600 leading-relaxed">
                       {article.excerpt}
                     </p>

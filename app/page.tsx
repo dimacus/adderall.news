@@ -29,12 +29,12 @@ export default function Home() {
     },
     {
       id: 3,
-      title: "Healthcare Innovation Breakthrough Shows Promise for Chronic Conditions",
-      excerpt: "Revolutionary treatment approaches demonstrate significant potential in addressing previously incurable medical conditions.",
+      title: "Retirees Flock to Revolutionary 'Brain In the Box' Technology as FDA Raises Concerns Over Strategic Adderall Reserves",
+      excerpt: "Medicare-age Americans embrace consciousness migration while federal amphetamine stockpiles face scrutiny. Cortical Labs' CL1 system promises cognitive immortality through biological computing.",
       image: "https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=800",
       category: "HEALTH",
-      timestamp: "6 hours ago",
-      link: "#" // Add this line
+      timestamp: "2 hours ago",
+      link: "/article/brain-box-breakthrough"
     }
   ];
 

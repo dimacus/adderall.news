@@ -9,6 +9,16 @@ export default function Home() {
 
   const featuredArticles = [
     {
+      id: 4,
+      title: "Police Drone Disguised as Eagle Intercepts Government Drones Disguised as Crows in Mid-Air Adderall Sting",
+      excerpt: "In a stunning display of mid-air surveillance and inter-agency confusion, a police drone disguised as a bald eagle intercepted three government-operated drones disguised as common crows in what officials are calling an ongoing investigation into illicit aerial trafficking of Schedule II stimulants.",
+      image: "/images/avian-conspiracy.jpg", // You'll need to add this image to your public/images directory
+      category: "THE AVIAN CONSPIRACY",
+      timestamp: "July 21, 2025",
+      isBreaking: true,
+      link: "/article/avian-conspiracy"
+    },
+    {
       id: 1,
       title: "BREAKING: Federal Amphetamine Reserve Exposed as Strategic Neural Computing Initiative, Sources Confirm",
       excerpt: "Exclusive investigation reveals government stockpiling stimulants for next-generation bio-AI infrastructure. Multiple sources confirm systematic accumulation of amphetamine compounds under drug enforcement guise.",
@@ -42,22 +52,26 @@ export default function Home() {
     {
       title: "Bio-Computing Patents Reveal Government Technology Strategy",
       timestamp: "45 minutes ago",
-      category: "TECHNOLOGY"
+      category: "TECHNOLOGY",
+      link: "/article/robeaute-darpa-patents"
     },
     {
       title: "Energy Markets Experience Unprecedented Volatility",
       timestamp: "1 hour ago",
-      category: "ENERGY"
+      category: "ENERGY",
+      link: "/article/federal-amphetamine-reserve"
     },
     {
       title: "Educational Systems Undergo Major Restructuring",
       timestamp: "3 hours ago",
-      category: "EDUCATION"
+      category: "EDUCATION",
+      link: "/article/brain-box-breakthrough"
     },
     {
       title: "Police Drone Disguised as Eagle Intercepts Government Drones Disguised as Crows in Mid-Air Adderall Sting",
       timestamp: "5 hours ago",
-      category: "THE AVIAN CONSPIRACY"
+      category: "THE AVIAN CONSPIRACY",
+      link: "/article/avian-conspiracy"
     }
   ];
 
@@ -308,9 +322,11 @@ export default function Home() {
                     <span className="text-xs font-bold text-blue-600 mb-1 block">
                       {article.category}
                     </span>
-                    <h4 className="font-semibold text-gray-900 mb-2 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
-                      {article.title}
-                    </h4>
+                    <Link href={article.link ?? "#"}>
+                      <h4 className="font-semibold text-gray-900 mb-2 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
+                        {article.title}
+                      </h4>
+                    </Link>
                     <span className="text-sm text-gray-500 flex items-center">
                       <Clock className="w-4 h-4 mr-1" />
                       {article.timestamp}

@@ -55,9 +55,9 @@ export default function Home() {
       category: "EDUCATION"
     },
     {
-      title: "Transportation Infrastructure Receives Significant Investment",
+      title: "Police Drone Disguised as Eagle Intercepts Government Drones Disguised as Crows in Mid-Air Adderall Sting",
       timestamp: "5 hours ago",
-      category: "INFRASTRUCTURE"
+      category: "THE AVIAN CONSPIRACY"
     }
   ];
 
